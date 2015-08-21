@@ -1,10 +1,10 @@
 (ns re-frame-examples.views
-    (:require [re-frame.core :as re-frame]
+    (:require [re-frame.core :as rf]
               [re-com.core :as re-com]))
 
 ;; --------------------
 (defn home-title []
-  (let [name (re-frame/subscribe [:name])]
+  (let [name (rf/subscribe [:name])]
     (fn []
       [re-com/title
        :label (str "Hello from " @name ". This is the Home Page.")
@@ -29,7 +29,7 @@
 (defn link-to-home-page []
   [re-com/hyperlink-href
    :label "go to Home Page"
-   :href "#/"])  
+   :href "#/"])
 
 (defn about-panel []
   [re-com/v-box
@@ -43,7 +43,7 @@
 (defmethod panels :default [] [:div])
 
 (defn main-panel []
-  (let [active-panel (re-frame/subscribe [:active-panel])]
+  (let [active-panel (rf/subscribe [:active-panel])]
     (fn []
       [re-com/v-box
        :height "100%"

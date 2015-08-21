@@ -31,3 +31,35 @@ notifying browser that file changed:  /re_frame_examples/subs.js
 notifying browser that file changed:  /re_frame_examples/routes.js
 notifying browser that file changed:  /re_frame_examples/core.js
 notifying browser that file changed:  /re_frame_examples/handlers.js
+Figwheel: focusing on build-ids (dev)
+[0mCompiling "resources/public/js/compiled/app.js" from ["src/cljs"]...
+[32mSuccessfully compiled "resources/public/js/compiled/app.js" in 0.283 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/goog/deps.js
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  /re_frame_examples/views.js
+notifying browser that file changed:  /re_frame_examples/db.js
+notifying browser that file changed:  /re_frame_examples/subs.js
+notifying browser that file changed:  /re_frame_examples/routes.js
+notifying browser that file changed:  /re_frame_examples/core.js
+notifying browser that file changed:  /re_frame_examples/handlers.js
+[0mCompiling "resources/public/js/compiled/app.js" from ["src/cljs"]...
+[32mSuccessfully compiled "resources/public/js/compiled/app.js" in 0.308 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  /re_frame_examples/views.js
+[0mCompiling "resources/public/js/compiled/app.js" from ["src/cljs"]...
+[32mSuccessfully compiled "resources/public/js/compiled/app.js" in 0.542 seconds.[0m
+notifying browser that file changed:  /re_frame_examples/routes.js
+[0mCompiling "resources/public/js/compiled/app.js" from ["src/cljs"]...
+[32mSuccessfully compiled "resources/public/js/compiled/app.js" in 0.178 seconds.[0m
+notifying browser that file changed:  /re_frame_examples/views.js
+[0mCompiling "resources/public/js/compiled/app.js" from ["src/cljs"]...
+[32mSuccessfully compiled "resources/public/js/compiled/app.js" in 0.41 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  /re_frame_examples/routes.js
+[0mCompiling "resources/public/js/compiled/app.js" from ["src/cljs"]...
+[32mSuccessfully compiled "resources/public/js/compiled/app.js" in 0.166 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  /re_frame_examples/routes.js
+[0mCompiling "resources/public/js/compiled/app.js" from ["src/cljs"]...
+[32mSuccessfully compiled "resources/public/js/compiled/app.js" in 0.153 seconds.[0m
+notifying browser that file changed:  /re_frame_examples/views.js
