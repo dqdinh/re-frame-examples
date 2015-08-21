@@ -1,3 +1,5 @@
+'use strict';
+
 (function() {
 
 var Ap = Array.prototype;

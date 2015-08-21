@@ -1,3 +1,5 @@
+'use strict';
+
 var page = require('webpage').create();
 var url = phantom.args[0];
 

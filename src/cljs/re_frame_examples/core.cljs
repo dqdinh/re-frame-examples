@@ -10,7 +10,8 @@
   (reagent/render [views/main-panel]
                   (.getElementById js/document "app")))
 
-(defn ^:export init [] 
+(defn ^:export init []
   (routes/app-routes)
+  ;; https://github.com/Day8/re-frame/wiki/Bootstrap-An-Application#a-cheat
   (re-frame/dispatch-sync [:initialize-db])
   (mount-root))

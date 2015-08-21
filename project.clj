@@ -1,15 +1,16 @@
 (defproject re-frame-examples "0.1.0-SNAPSHOT"
-  :dependencies [[org.clojure/clojure "1.6.0"]
-                 [org.clojure/clojurescript "0.0-3211"]
+  :dependencies [[org.clojure/clojure "1.7.0"]
+                 [org.clojure/clojurescript "1.7.48"]
+                 [cljsjs/react "0.13.3-1"]
                  [reagent "0.5.0"]
                  [re-frame "0.4.1"]
-                 [re-com "0.5.4"]
+                 [re-com "0.6.1"]
                  [secretary "1.2.3"]]
 
   :source-paths ["src/clj"]
 
   :plugins [[lein-cljsbuild "1.0.6"]
-            [lein-figwheel "0.3.3" :exclusions [cider/cider-nrepl]]]
+            [lein-figwheel "0.3.7" :exclusions [cider/cider-nrepl]]]
 
   :clean-targets ^{:protect false} ["resources/public/js/compiled" "target" "test/js"]
 
@@ -22,6 +23,9 @@
                                    :output-to "resources/public/js/compiled/app.js"
                                    :output-dir "resources/public/js/compiled/out"
                                    :asset-path "js/compiled/out"
+                                   :pretty-print true
+                                   :optimizations :none
+                                   :source-map true
                                    :source-map-timestamp true}}
 
                        {:id "test"

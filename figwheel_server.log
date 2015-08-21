@@ -1,0 +1,33 @@
+Figwheel: focusing on build-ids (dev)
+[0mCompiling "resources/public/js/compiled/app.js" from ["src/cljs"]...
+[32mSuccessfully compiled "resources/public/js/compiled/app.js" in 0.247 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/goog/deps.js
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  /re_frame_examples/views.js
+notifying browser that file changed:  /re_frame_examples/db.js
+notifying browser that file changed:  /re_frame_examples/subs.js
+notifying browser that file changed:  /re_frame_examples/routes.js
+notifying browser that file changed:  /re_frame_examples/core.js
+notifying browser that file changed:  /re_frame_examples/handlers.js
+Figwheel: focusing on build-ids (dev)
+[0mCompiling "resources/public/js/compiled/app.js" from ["src/cljs"]...
+[32mSuccessfully compiled "resources/public/js/compiled/app.js" in 0.232 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/goog/deps.js
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  /re_frame_examples/views.js
+notifying browser that file changed:  /re_frame_examples/db.js
+notifying browser that file changed:  /re_frame_examples/subs.js
+notifying browser that file changed:  /re_frame_examples/routes.js
+notifying browser that file changed:  /re_frame_examples/core.js
+notifying browser that file changed:  /re_frame_examples/handlers.js
+Figwheel: focusing on build-ids (dev)
+[0mCompiling "resources/public/js/compiled/app.js" from ["src/cljs"]...
+[32mSuccessfully compiled "resources/public/js/compiled/app.js" in 0.262 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/goog/deps.js
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  /re_frame_examples/views.js
+notifying browser that file changed:  /re_frame_examples/db.js
+notifying browser that file changed:  /re_frame_examples/subs.js
+notifying browser that file changed:  /re_frame_examples/routes.js
+notifying browser that file changed:  /re_frame_examples/core.js
+notifying browser that file changed:  /re_frame_examples/handlers.js
