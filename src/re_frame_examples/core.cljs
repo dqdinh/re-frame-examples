@@ -1,6 +1,7 @@
 (ns re-frame-examples.core
     (:require [reagent.core :as r]
               [re-frame.core :as rf]
+              [re-frame-examples.utils :refer [mlog]]
               [re-frame-examples.handlers]
               [re-frame-examples.subs]
               [re-frame-examples.state]
@@ -11,6 +12,8 @@
 (defn mount-root []
   (r/render [top-panel]
             (.getElementById js/document "app")))
+
+(mlog "env" (cljs-env :dev?))
 
 (defn ^:export init []
   (rf/dispatch [:initialize-core-state])
