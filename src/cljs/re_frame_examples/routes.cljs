@@ -24,6 +24,5 @@
   (defroute "/about" []
     (rf/dispatch [:set-active-panel :about-panel]))
 
-
   ;; --------------------
   (hook-browser-navigation!))

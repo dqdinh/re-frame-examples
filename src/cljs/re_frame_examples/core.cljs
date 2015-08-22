@@ -4,14 +4,13 @@
               [re-frame-examples.handlers]
               [re-frame-examples.subs]
               [re-frame-examples.routes :as routes]
-              [re-frame-examples.views :as views]))
+              [re-frame-examples.views.panels :as panels]))
 
 (defn mount-root []
-  (r/render [views/main-panel]
+  (r/render [panels/top-panel]
                   (.getElementById js/document "app")))
 
 (defn ^:export init []
+  (rf/dispatch [:initialize-db])
   (routes/app-routes)
-  ;; https://github.com/Day8/re-frame/wiki/Bootstrap-An-Application#a-cheat
-  (rf/dispatch-sync [:initialize-db])
   (mount-root))

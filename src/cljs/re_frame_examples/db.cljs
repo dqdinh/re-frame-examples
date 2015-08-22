@@ -1,4 +1,4 @@
 (ns re-frame-examples.db)
 
-(def default-db
+(def initial-state
   {:name "re-frame"})
