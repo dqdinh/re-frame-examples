@@ -12,3 +12,5 @@ target/
 compiled/
 resources/public/js/
 temp/
+
+figwheel_server.log

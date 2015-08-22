@@ -3,16 +3,11 @@
     (:require [re-frame.core :as rf]))
 
 (rf/register-sub
- :initialised?
- (fn [db]
-   (reaction (not (empty? @db)))))
-
-(rf/register-sub
- :name
- (fn [db]
-   (reaction (:name @db))))
+ :initialized?
+ (fn [state]
+   (reaction (not (empty? @state)))))
 
 (rf/register-sub
  :active-panel
- (fn [db _]
-   (reaction (:active-panel @db))))
+ (fn [state _]
+   (reaction (:active-panel @state))))

@@ -1,13 +1,13 @@
-(ns re-frame-examples.views.panels
+(ns re-frame-examples.panels
     (:require [re-frame.core :as rf]
-              [re-frame-examples.views.home :refer [ home-panel ]]
-              [re-frame-examples.views.about :refer [ about-panel ]]
+              [re-frame-examples.home.views :as home]
+              [re-frame-examples.about.views :as about]
               [re-com.core :refer [v-box throbber p title hyperlink-href ]]))
 
 (defmulti panels identity)
-(defmethod panels :home-panel [] [home-panel])
-(defmethod panels :about-panel [] [about-panel])
 (defmethod panels :default [] [:div "No panel"])
+(defmethod panels :home-panel [] [home/home-panel])
+(defmethod panels :about-panel [] [about/about-panel])
 
 (defn main-panel []
   (let [active-panel (rf/subscribe [:active-panel])]
@@ -18,7 +18,7 @@
 
 (defn top-panel
   []
-  (let [ready? (rf/subscribe [:initialised?])]
+  (let [ready? (rf/subscribe [:initialized?])]
     (fn []
       (if @ready?
         [main-panel]

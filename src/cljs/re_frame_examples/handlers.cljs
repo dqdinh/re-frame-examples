@@ -1,18 +1,18 @@
 (ns re-frame-examples.handlers
   (:require [re-frame.core :as rf]
-            [re-frame-examples.db :as db]))
+            [re-frame-examples.state :as state]))
 
-(defn initialize-db
+(defn initialize-core-state
   [_ _]
-  db/initial-state)
+  state/initial-state)
 
 (rf/register-handler
-  :initialize-db
-  initialize-db)
+  :initialize-core-state
+  initialize-core-state)
 
 (defn set-active-panel
-  [db [_ active-panel]]
-  (assoc db :active-panel active-panel))
+  [state [_ active-panel]]
+  (assoc state :active-panel active-panel))
 
 (rf/register-handler
   :set-active-panel

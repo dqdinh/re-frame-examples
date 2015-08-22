@@ -1,4 +1,4 @@
-(ns re-frame-examples.views.about
+(ns re-frame-examples.about.views
     (:require [re-frame.core :as rf]
               [re-com.core :refer [v-box throbber p title hyperlink-href ]]))
 

@@ -16,6 +16,7 @@
 
 (defn app-routes []
   (secretary/set-config! :prefix "#")
+
   ;; --------------------
   ;; define routes here
   (defroute "/" []
@@ -24,5 +25,4 @@
   (defroute "/about" []
     (rf/dispatch [:set-active-panel :about-panel]))
 
-  ;; --------------------
   (hook-browser-navigation!))
