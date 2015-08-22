@@ -5,7 +5,8 @@
               [re-frame-examples.subs]
               [re-frame-examples.state]
               [re-frame-examples.routes :refer [app-routes]]
-              [re-frame-examples.panels :refer [top-panel]]))
+              [re-frame-examples.panels :refer [top-panel]])
+    (:require-macros [re-frame-examples.env :refer [cljs-env]]))
 
 (defn mount-root []
   (r/render [top-panel]
