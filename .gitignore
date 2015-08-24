@@ -8,9 +8,9 @@ pom.xml.asc
 .lein-repl-history
 .lein-plugins/
 .lein-failures
+.lein-env
 target/
 compiled/
 resources/public/js/
 temp/
-
 figwheel_server.log

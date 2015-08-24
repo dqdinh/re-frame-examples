@@ -1,4 +1,4 @@
-(ns re-frame-examples.server
+(ns re-frame-examples.phonecat.server
   (:require [re-frame-examples.handler :refer [app]]
             [ring.adapter.jetty :refer [run-jetty]])
   (:gen-class))

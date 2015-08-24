@@ -16,9 +16,14 @@
                  [secretary "1.2.3"]]
 
   :plugins [[lein-cljsbuild "1.0.6"]
+            [lein-environ "1.0.0"]
             [lein-figwheel "0.3.7" :exclusions [cider/cider-nrepl]]]
 
   :source-paths ["src"]
+
+  :profiles {:dev        {:env {:env? :dev}}
+             :test       {:env {:env? :test}}
+             :production {:env {:env? :prod}}}
 
   :clean-targets ^{:protect false} ["resources/public/js/compiled" "target" "test/js"]
 
@@ -26,8 +31,6 @@
                         :source-paths ["src"]
 
                         :figwheel {:on-jsload "re-frame-examples.core/mount-root"}
-
-                        :env {:dev? true}
 
                         :compiler {:main re-frame-examples.core
                                    :output-to "resources/public/js/compiled/app.js"
@@ -48,7 +51,6 @@
 
                        {:id "min"
                         :source-paths ["src"]
-                        :env {:dev? false}
                         :compiler {:main re-frame-examples.core
                                    :output-to "resources/public/js/compiled/app.js"
                                    :optimizations :advanced

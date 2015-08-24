@@ -13,7 +13,7 @@
   (r/render [top-panel]
             (.getElementById js/document "app")))
 
-(mlog "env" (cljs-env :dev?))
+(mlog "env" (cljs-env :env?))
 
 (defn ^:export init []
   (rf/dispatch [:initialize-core-state])
