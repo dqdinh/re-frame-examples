@@ -1,7 +1,8 @@
 (ns re-frame-examples.routes
     (:require-macros [secretary.core :refer [defroute]])
     (:import goog.History)
-    (:require [secretary.core :as secretary]
+    (:require [reagent.session :as session]
+              [secretary.core :as s]
               [goog.events :as events]
               [goog.history.EventType :as EventType]
               [re-frame.core :as rf]))
@@ -11,18 +12,34 @@
     (events/listen
      EventType/NAVIGATE
      (fn [event]
-       (secretary/dispatch! (.-token event))))
+       (s/dispatch! (.-token event))))
     (.setEnabled true)))
 
-(defn app-routes []
-  (secretary/set-config! :prefix "#")
+(defn redirect-to
+  [resource]
+  (s/dispatch! resource)
+  (.setToken (History.) resource))
 
-  ;; --------------------
+(defn app-routes []
+  (s/set-config! :prefix "#")
+
   ;; define routes here
-  (defroute "/" []
+  (s/defroute "/" []
     (rf/dispatch [:set-active-panel :home-panel]))
 
-  (defroute "/about" []
+  (s/defroute "/about" []
     (rf/dispatch [:set-active-panel :about-panel]))
 
+  (s/defroute "/phones" []
+    (session/put! :current-page #'home-page))
+
+  (s/defroute "/phones/:phone-id" {:as params}
+    (session/put! :current-page #'phone-page)
+    (session/put! :params params)
+    (rf/dispatch [:load-phone-detail (:phone-id params)]))
+
+  (s/defroute "*" []
+    (redirect-to "/phones"))
+
+  ;; History must be called after routes have been defined
   (hook-browser-navigation!))

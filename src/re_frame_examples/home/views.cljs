@@ -18,7 +18,7 @@
    :href "#/about"])
 
 (defn home-panel []
-  (rf/dispatch [:fold-home-state])
+  (rf/dispatch [:init-home-state])
   [v-box
    :gap "1em"
    :children [[home-title] [link-to-about-page]]])
