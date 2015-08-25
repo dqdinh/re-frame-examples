@@ -7,8 +7,7 @@ A [re-frame](https://github.com/Day8/re-frame) application designed to ... well,
 ### Run application:
 
 ```
-lein clean
-lein figwheel dev
+lein clean; lein figwheel dev
 ```
 
 Figwheel will automatically push cljs changes to the browser.
@@ -27,4 +26,11 @@ lein cljsbuild auto test
 ```
 lein clean
 lein cljsbuild once min
+```
+
+## Start api server
+```
+lein repl
+user=> (use 're-frame-examples.api.repl)
+user=> (start-server)
 ```
