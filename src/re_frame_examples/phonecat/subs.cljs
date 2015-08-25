@@ -2,12 +2,6 @@
     (:require [re-frame.core :as rf])
     (:require-macros [reagent.ratom  :refer [reaction]]))
 
-(rf/register-sub        ;; a new subscription handler
- :phones             ;; usage (subscribe [:phones])
- (fn [db]
-   ;; extracts the phones property from the db
-   (reaction (:phones @db))))  ;; pulls out :phones
-
 (rf/register-sub
  :search-input
  (fn [db]
@@ -32,11 +26,6 @@
         (if-let [image-url (:selected-image-url @phone-details)]
           image-url
           (first @images)))))))
-
-(rf/register-sub
- :phone-details
- (fn [db]
-   (reaction (:phone-details @db))))
 
 (rf/register-sub
  :order-prop

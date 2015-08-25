@@ -9,13 +9,21 @@
               [re-frame-examples.panels :refer [top-panel]])
     (:require-macros [re-frame-examples.env :refer [cljs-env]]))
 
+(enable-console-print!)
+
 (defn mount-root []
   (r/render [top-panel]
             (.getElementById js/document "app")))
 
-(mlog "env" (cljs-env :env?))
+(def debug-state)
 
 (defn ^:export init []
-  (rf/dispatch [:initialize-core-state])
+  (rf/dispatch [:initialize-app-state])
   (app-routes)
   (mount-root))
+
+(mlog "env" (cljs-env :env?))
+
+(defn show-state []
+  (let [debug-state (rf/subscribe [:debug-state])]
+    debug-state))

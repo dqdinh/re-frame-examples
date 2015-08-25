@@ -68,4 +68,5 @@
      [search-component]
      [order-by-component]]
     [:div {:class "col-md-10"}
-     [phones-component]]]])
+     [phones-component]]
+    ]])

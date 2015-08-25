@@ -8,10 +8,10 @@
             [compojure.route :as route]))
 
 (defn init []
-  (println "lala is starting"))
+  (println "starting"))
 
 (defn destroy []
-  (println "lala is shutting down"))
+  (println "shutting down"))
 
 (defroutes app-routes
   (GET "/" [] (render-file "public/index.html" {}))
