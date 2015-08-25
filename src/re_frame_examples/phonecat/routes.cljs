@@ -1,5 +1,7 @@
 (ns re-frame-examples.phonecat.routes
     (:require [reagent.session :as session]
+              [goog.events :as events]
+              [goog.history.EventType :as EventType]
               [secretary.core :as s :include-macros true]
               [re-frame.core :as rf])
     (:import goog.History))
@@ -25,8 +27,7 @@
 (defn current-page []
   [(session/get :current-page) (session/get :params)])
 
-;; History
-;; must be called after routes have been defined
+;; History must be called after routes have been defined
 (defn hook-browser-navigation! []
   (doto (History.)
     (events/listen

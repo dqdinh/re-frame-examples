@@ -5,9 +5,7 @@
               [re-frame-examples.phonecat.handler]
               [re-frame-examples.phonecat.views.phone-list]
               [re-frame-examples.phonecat.views.phone-details]
-              [re-frame-examples.phonecat.routes :as routes]
-              ))
-
+              [re-frame-examples.phonecat.routes :as routes]))
 
 ;; Initialize app
 (defn init! []

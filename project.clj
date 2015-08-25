@@ -7,21 +7,25 @@
                  [re-frame "0.4.1"]
                  [re-com "0.6.1"]
                  [cljs-ajax "0.3.14"]
-                 [ring "1.4.0"]
-                 [ring/ring-defaults "0.1.3"]
-                 [prone "0.8.2"]
-                 [selmer "0.9.0"]
+                 [ring-server "0.3.1"]
                  [environ "1.0.0"]
+                 [selmer "0.8.0"]
                  [compojure "1.4.0"]
                  [secretary "1.2.3"]]
 
   :plugins [[lein-cljsbuild "1.0.6"]
+            [lein-ring "0.9.6"]
             [lein-environ "1.0.0"]
             [lein-figwheel "0.3.7" :exclusions [cider/cider-nrepl]]]
 
+  :ring {:handler re-frame-examples.api.server/app
+         :init re-frame-examples.api.server/init
+         :destroy re-frame-examples.api.server/destroy}
+
   :source-paths ["src"]
 
-  :profiles {:dev        {:env {:env? :dev}}
+  :profiles {:dev {:env {:env? :dev}
+                   :dependencies [[ring-mock "0.1.5"] [ring/ring-devel "1.3.1"]]}
              :test       {:env {:env? :test}}
              :production {:env {:env? :prod}}}
 
