@@ -20,4 +20,4 @@
 (rf/register-sub
  :debug-state
  (fn [state _]
-   (reaction @state)))
+   state))
