@@ -15,8 +15,6 @@
   (r/render [top-panel]
             (.getElementById js/document "app")))
 
-(def debug-state)
-
 (defn ^:export init []
   (rf/dispatch [:initialize-app-state])
   (app-routes)
@@ -24,6 +22,11 @@
 
 (mlog "env" (cljs-env :env?))
 
+(defn app-state-to-js
+  "Used for inspecting app state in the console."
+  [state]
+  (clj->js state))
+
 (defn show-state []
   (let [debug-state (rf/subscribe [:debug-state])]
-    debug-state))
+    (app-state-to-js @debug-state)))
