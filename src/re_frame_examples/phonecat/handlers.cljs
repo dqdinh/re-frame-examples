@@ -6,14 +6,14 @@
 (rf/register-handler
  :set-image
  (fn
-   ;; take an image url and set it in the db
+   ;; take an image url and set it in the state
    [app-state [_ selected-image-url]]
    (assoc-in app-state [:phone-details :selected-image-url] selected-image-url)))
 
 (rf/register-handler
  :process-phones-response
  (fn
-   ;; store the response of fetching the phones list in the phones attribute of the db
+   ;; store the response of fetching the phones list in the phones attribute of the state
    [app-state [_ response]]
    (assoc-in app-state [:phones] response)))
 
@@ -39,7 +39,7 @@
 (rf/register-handler
  :process-phone-detail-response
  (fn
-   ;; store info for the specific phone-id in the db
+   ;; store info for the specific phone-id in the state
    [app-state [_ phone-id response]]
    (assoc-in app-state [:phone-details (keyword phone-id)] response)))
 
