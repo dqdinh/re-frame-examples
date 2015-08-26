@@ -1,6 +1,6 @@
 (ns re-frame-examples.phonecat.handlers
     (:require [re-frame.core :as rf]
-              [re-frame-examples.phonecat.state :refer [initial-phonecat-state]]
+              [re-frame-examples.phonecat.state :refer [merge-phonecat-state]]
               [ajax.core :as ajax]))
 
 (rf/register-handler
@@ -62,10 +62,6 @@
               :response-format :json
               :keywords? true})
    app-state))
-
-(defn merge-phonecat-state
-  [state _]
-  (into state initial-phonecat-state))
 
 (rf/register-handler
  :initialize-phonecat-state

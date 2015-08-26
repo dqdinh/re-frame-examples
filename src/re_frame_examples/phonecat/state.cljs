@@ -6,3 +6,7 @@
    :search-input ""
    :order-prop "name"})
 
+(defn merge-phonecat-state
+  [state _]
+  (into state initial-phonecat-state))
+

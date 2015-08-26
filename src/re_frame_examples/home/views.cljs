@@ -17,8 +17,15 @@
    :label "go to About Page"
    :href "#/about"])
 
+(defn link-to-phonecat-page []
+  [hyperlink-href
+   :label "go to Phonecat Page"
+   :href "#/phones"])
+
+
 (defn home-panel []
   (rf/dispatch [:init-home-state])
-  [v-box
-   :gap "1em"
-   :children [[home-title] [link-to-about-page]]])
+  [:div {:class "container-fluid"}
+     [:div [ home-title ]]
+     [:div [ link-to-about-page ]]
+     [:div [ link-to-phonecat-page ]]])

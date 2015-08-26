@@ -127,7 +127,7 @@
 
 (defn phone-page
   "top level component for the phone page"
-  [{phone-id :phone-id}]
+  [phone-id]
   (let [phone (rf/subscribe [:phone-query phone-id])
         image-url (rf/subscribe [:selected-image-url phone-id])]
     (fn []

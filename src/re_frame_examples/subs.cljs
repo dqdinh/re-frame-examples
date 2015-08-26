@@ -18,6 +18,11 @@
    (reaction (:active-panel @state))))
 
 (rf/register-sub
+ :panel-params
+ (fn [state _]
+   (reaction (:panel-params @state))))
+
+(rf/register-sub
  :debug-state
  (fn [state _]
    (app-state-to-js @state)))
